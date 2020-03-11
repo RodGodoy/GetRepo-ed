@@ -1,0 +1,42 @@
+**Example:**
+A file such as:
+```
+pg0ch4agke
+kt3s0a0dzop1dky
+0oqaqkx528ox0iwdredo7
+iili2tbox0tk6
+kt3s0a0dzop1dky
+iili2tbox0tk6
+```
+Your code should save a new file that looks like this:
+```
+pg0ch4agke
+kt3s0a0dzop1dky
+0oqaqkx528ox0iwdredo7
+iili2tbox0tk6
+```
+You can find the duplicate text file here: https://s3-us-west-2.amazonaws.com/public.curatesolutions.com/interviewing/dedup.txt
+**Basic Requirements:**
+In your language of choice (but ideally not java or C#...) write the code to read in this file, find the duplicates and write out the new non-duplicate strings.
+**Medium Requirements:**
+1. it should preserve the order of the original strings
+2. it should not require as much memory as the size of the original text file (ie. if dedup.txt is 15MB you should find a way to NOT require 15MB of memory to hold all the text at one time).
+**Bonus Points:**
+Some of the strings are not only duplicates but also subsets of the original text, you should work towards detecting this case and also removing these as well.
+For example:
+```
+pg0ch4agke
+kt3s0a0dzop1dky
+0oqaqkx528ox0iwdredo7
+iili2tbox0tk6
+i2tbkt3s0a0dzop1dkyx0tk
+iili2tbox0tk6
+```
+Your code would identify that `i2tbkt3s0a0dzop1dkyx0tk` is a subset duplicate of `kt3s0a0dzop1dky` - in this case it would save the LONGER string and eliminate the shorter string.
+The final result should look like:
+```
+pg0ch4agke
+0oqaqkx528ox0iwdredo7
+iili2tbox0tk6
+i2tbkt3s0a0dzop1dkyx0tk
+```
